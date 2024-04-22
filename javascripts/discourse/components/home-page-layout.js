@@ -5,8 +5,8 @@ import { tracked } from "@glimmer/tracking";
 
 export default class HomePageLayoutComponent extends Component {
   @service router;
-  @service site;
-  @tracked page;
+  // @service site;
+  // @tracked page;
   // @tracked toggleState = "expanded";
   // @tracked visability = "show";
 
