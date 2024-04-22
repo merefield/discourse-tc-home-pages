@@ -1,0 +1,9 @@
+{
+  "extends": "eslint-config-discourse",
+  "ignorePatterns": ["javascripts/vendor/*"],
+  "globals": {
+    "settings": "readonly",
+    "themePrefix": "readonly"
+  }
+}
+

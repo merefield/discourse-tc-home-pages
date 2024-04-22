@@ -1,0 +1,87 @@
+homepage_components:
+  default: >-
+    [
+      {
+        "pageName": "one",
+        "className": "page-one",
+        "lines": [
+          {
+            "className": "line-one",
+            "components": [
+              {
+                "component_name": "home-page-html",
+                "params": [
+                  {
+                    "name": "content",
+                    "value": "<div class='big-letters'>Custom</div>"
+                  }
+                ]
+              },
+              {
+                "component_name": "home-page-html",
+                "params": [
+                  {
+                    "name": "content",
+                    "value": "<div class='big-letters'>Homepage</div>"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  json_schema: >-
+    {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "pageName": {
+            "type": "string"
+          },
+          "className": {
+            "type": "string"
+          },
+          "lines": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "className": {
+                  "type": "string"
+                },
+                "components": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "component_name": {
+                        "type": "string"
+                      },
+                      "params": {
+                        "type": "array",
+                        "format": "table",
+                        "uniqueItems": true,
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  description: "Specify page, line and list of components.  Order determines layout."

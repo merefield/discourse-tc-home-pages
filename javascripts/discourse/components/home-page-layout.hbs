@@ -1,0 +1,16 @@
+<div class="{{this.page.className}} homepage-content">
+  {{#each this.page.lines as |line|}}
+      <div class="{{line.className}} homepage-line">
+        {{#each line.components as |component|}}
+          <div class="component-widget">
+            {{log component.component_name}}
+            {{log component.parsedParams}}
+        {{!-- hello --}}
+        {{!-- <HomePageHtml @params={{component.parsedParams}} /> --}}
+            {{component component.component_name params=component.parsedParams}}
+            {{!-- {{component "home-page-html" params=component.parsedParams}} --}}
+          </div>
+        {{/each}}
+      </div>
+  {{/each}}
+</div>
