@@ -1,87 +1,136 @@
 homepage_components:
-  default: >-
-    [
-      {
-        "pageName": "one",
-        "className": "page-one",
-        "lines": [
-          {
-            "className": "line-one",
-            "components": [
-              {
-                "component_name": "home-page-markdown",
-                "params": [
-                  {
-                    "name": "markdown",
-                    "value": "## Custom"
-                  }
-                ]
-              },
-              {
-                "component_name": "home-page-html",
-                "params": [
-                  {
-                    "name": "content",
-                    "value": "<div class='big-letters'>Homepage</div>"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  json_schema: >-
-    {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "pageName": {
-            "type": "string"
-          },
-          "className": {
-            "type": "string"
-          },
-          "lines": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "className": {
-                  "type": "string"
-                },
-                "components": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "component_name": {
-                        "type": "string"
-                      },
-                      "params": {
-                        "type": "array",
-                        "format": "table",
-                        "uniqueItems": true,
-                        "items": {
-                          "type": "object",
-                          "properties": {
-                            "name": {
-                              "type": "string"
-                            },
-                            "value": {
-                              "type": "string"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+  type: objects
+  default:
+    - pageName: one
+      className: page-one
+      lines:
+        - className: line-one
+          components:
+            - component_name: home-page-markdown
+              params:
+                - name: markdown
+                  value: > 
+                    ## Custom
+                      * first bullet
+                      * second bullet
+            - component_name: home-page-html
+              params:
+                - name: content
+                  value: "<div class='big-letters'>Homepage</div>"
+  schema:
+    name: page
+    properties: 
+      pageName:
+        type: string
+      className:
+        type: string
+      lines:
+        type: objects
+        schema:
+          name: line
+          properties:
+            className:
+              type: string
+            components:
+              type: objects
+              schema:
+                name: component
+                properties:
+                  component_name:
+                    type: string
+                  params:
+                    type: objects
+                    schema:
+                      name: param
+                      properties:
+                        name:
+                          type: string
+                        value:
+                          type: string
   description: "Specify page, line and list of components.  Order determines layout."
+  # default: >-
+  #   [
+  #     {
+  #       "pageName": "one",
+  #       "className": "page-one",
+  #       "lines": [
+  #         {
+  #           "className": "line-one",
+  #           "components": [
+  #             {
+  #               "component_name": "home-page-markdown",
+  #               "params": [
+  #                 {
+  #                   "name": "markdown",
+  #                   "value": "## Custom"
+  #                 }
+  #               ]
+  #             },
+  #             {
+  #               "component_name": "home-page-html",
+  #               "params": [
+  #                 {
+  #                   "name": "content",
+  #                   "value": "<div class='big-letters'>Homepage</div>"
+  #                 }
+  #               ]
+  #             }
+  #           ]
+  #         }
+  #       ]
+  #     }
+  #   ]
+  # json_schema: >-
+  #   {
+  #     "type": "array",
+  #     "items": {
+  #       "type": "object",
+  #       "properties": {
+  #         "pageName": {
+  #           "type": "string"
+  #         },
+  #         "className": {
+  #           "type": "string"
+  #         },
+  #         "lines": {
+  #           "type": "array",
+  #           "items": {
+  #             "type": "object",
+  #             "properties": {
+  #               "className": {
+  #                 "type": "string"
+  #               },
+  #               "components": {
+  #                 "type": "array",
+  #                 "items": {
+  #                   "type": "object",
+  #                   "properties": {
+  #                     "component_name": {
+  #                       "type": "string"
+  #                     },
+  #                     "params": {
+  #                       "type": "array",
+  #                       "format": "table",
+  #                       "uniqueItems": true,
+  #                       "items": {
+  #                         "type": "object",
+  #                         "properties": {
+  #                           "name": {
+  #                             "type": "string"
+  #                           },
+  #                           "value": {
+  #                             "type": "string"
+  #                           }
+  #                         }
+  #                       }
+  #                     }
+  #                   }
+  #                 }
+  #               }
+  #             }
+  #           }
+  #         }
+  #       }
+  #     }
+  #   }
+

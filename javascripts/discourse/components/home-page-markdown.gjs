@@ -11,7 +11,7 @@ export default class HomePageHtmlComponent extends Component {
     loadScript (
       settings.theme_uploads.showdown
     ).then (() => {
-      const converter = new showdown.Converter()
+      const converter = new showdown.Converter({simpleLineBreaks: true});
       this.html =  htmlSafe(converter.makeHtml(this.args.params.markdown))
     })
   }
