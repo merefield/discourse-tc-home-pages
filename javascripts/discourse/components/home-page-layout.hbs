@@ -6,9 +6,9 @@
             {{log component.component_name}}
             {{log component.parsedParams}}
         {{!-- hello --}}
-            {{!-- <HomePageHtml @params={{component.parsedParams}} /> --}}
+            <HomePageHtml @params={{component.parsedParams}} />
               {{!-- {{component component.component_name params=component.parsedParams}} --}}
-            {{component "home-page-html"}}}
+            {{!-- {{component "home-page-html"}}} --}}
           </div>
         {{/each}}
       </div>
