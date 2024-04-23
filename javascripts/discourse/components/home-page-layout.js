@@ -22,11 +22,9 @@ export default class HomePageLayoutComponent extends Component {
   get page() {
     let page;
     if (!this.page_name) {
-      debugger;
       page = JSON.parse(settings.homepage_components)[0];
     } else {
       page = JSON.parse(settings.homepage_components).filter(page => page.pageName === this.page_name)[0];
-      debugger;
     }
     page.lines.forEach((line) => {
       line.components.forEach((component) => {
