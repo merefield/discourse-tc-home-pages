@@ -49,7 +49,6 @@ export default class HomePageLayoutComponent extends Component {
     page.lines.forEach((line) => {
       line.components.forEach((component) => {
         if (getOwner(this).hasRegistration(`component:${component.component_name}`)) {
-          debugger;
           component.parsedParams = this.parseParams(component.params);
         } else {
           console.log(`Component ${component.component_name} not found`);

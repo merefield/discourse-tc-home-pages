@@ -11,4 +11,3 @@ export default class HomePageHtmlComponent extends Component {
     {{this.safeHtmlContent}}
   </template>
 }
-  
