@@ -7,8 +7,8 @@ export default class HomePageHtmlComponent extends Component {
     return htmlSafe(this.args.params.content)
   }
 
-  <template>
-    {{this.safeHtmlContent}}
-  </template>
+  // <template>
+  //   {{this.safeHtmlContent}}
+  // </template>
 }
   
