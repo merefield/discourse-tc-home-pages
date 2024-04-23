@@ -40,7 +40,12 @@ export default class HomePageLayoutComponent extends Component {
   };
 
   get page() {
-    let page = JSON.parse(settings.homepage_components).filter(page => page.pageName === this.page_name)[0];
+    let page;
+    if (!this.page_name) {
+      page = JSON.parse(settings.homepage_components)[0];
+    } else {
+      page = JSON.parse(settings.homepage_components).filter(page => page.pageName === this.page_name)[0];
+    }
     page.lines.forEach((line) => {
       line.components.forEach((component) => {
         if (getOwner(this).hasRegistration(`component:${component.component_name}`)) {
@@ -54,7 +59,17 @@ export default class HomePageLayoutComponent extends Component {
     return page;
   };
 
-//   <template>
-//   {{this.safeHtmlContent}}
-// </template>
+  <template>
+    <div class="{{this.page.className}} homepage-content">
+      {{#each this.page.lines as |line|}}
+          <div class="{{line.className}} homepage-line">
+            {{#each line.components as |c|}}
+              <div class="component-widget">
+                {{component c.component_name params=c.parsedParams}}
+              </div>
+            {{/each}}
+          </div>
+      {{/each}}
+    </div>
+  </template>
 }
