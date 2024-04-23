@@ -1,7 +1,6 @@
 import Component from '@glimmer/component';
 import { inject as service } from "@ember/service";
 import { getOwner } from "@ember/application";
-import { tracked } from "@glimmer/tracking";
 
 export default class HomePageLayoutComponent extends Component {
   @service router;
