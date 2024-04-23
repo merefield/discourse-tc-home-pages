@@ -9,11 +9,11 @@ homepage_components:
             "className": "line-one",
             "components": [
               {
-                "component_name": "home-page-html",
+                "component_name": "home-page-markdown",
                 "params": [
                   {
-                    "name": "content",
-                    "value": "<div class='big-letters'>Custom</div>"
+                    "name": "markdown",
+                    "value": "## Custom"
                   }
                 ]
               },

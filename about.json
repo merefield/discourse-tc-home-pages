@@ -8,5 +8,8 @@
     "custom_homepage": "true",
      "svg_icons": ["angle-up", "angle-down", "angle-left", "angle-right"]
   },
-  "authors": "merefield@gmail.com"
+  "authors": "merefield@gmail.com",
+  "assets": {
+    "showdown": "assets/showdown.js"
+  }
 }
