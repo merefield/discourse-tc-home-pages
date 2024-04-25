@@ -16,7 +16,7 @@ export default class HomePageLayoutComponent extends Component {
   };
 
   get page_name() {
-    return this.router.currentRoute.queryParams.page_name
+    return this.router.currentURL.split('/').pop();
   };
 
   get page() {
