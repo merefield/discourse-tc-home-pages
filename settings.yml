@@ -1,4 +1,7 @@
-homepage_components:
+homepages_main_page:
+  default: 'main'
+  description: "Specify starting page"
+homepages_components:
   default: >-
     [
       {
