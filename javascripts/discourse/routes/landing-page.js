@@ -10,6 +10,14 @@ export default class HomePageRoute extends DiscourseRoute{
   model(_, transition) {
     const currentPage = transition?.intent?.url?.split('/').pop();
 
-    console.log('currentPage', currentPage);
+    if (currentPage !== undefined) {
+      return ajax(`/${currentPage}.json`)
+        .then((results) => {
+          return EmberObject.create({
+            results: results
+          });
+        })
+        .catch(popupAjaxError);
+    }
   }
 }
