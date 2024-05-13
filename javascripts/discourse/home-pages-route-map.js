@@ -1,4 +1,4 @@
 export default function () {
-  this.route('home-page', { path: '/discourse-home-pages/home-page/:page_id'});
-  this.route('landing-page', { path: '/discourse-home-pages/landing-page/:page_id'});
+  this.route('dynamic-page', { path: '/home-pages/dp/:page_id'});
+  this.route('simple-page', { path: '/home-pages/sp/:page_id'});
 };

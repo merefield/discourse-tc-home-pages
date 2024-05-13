@@ -4,7 +4,7 @@ import { popupAjaxError } from "discourse/lib/ajax-error";
 import EmberObject from "@ember/object";
 import { inject as service } from "@ember/service";
 
-export default class HomePageRoute extends DiscourseRoute{
+export default class SimplePageRoute extends DiscourseRoute{
   @service router;
 
   model(_, transition) {
