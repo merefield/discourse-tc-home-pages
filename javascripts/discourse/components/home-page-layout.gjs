@@ -37,4 +37,18 @@ export default class HomePageLayoutComponent extends Component {
     });
     return page;
   };
+
+  <template>
+    <div class="{{this.page.className}} homepage-content">
+      {{#each this.page.lines as |line|}}
+          <div class="{{line.className}} homepage-line">
+            {{#each line.components as |c|}}
+              <div class="component-widget">
+                {{component c.component_name params=c.parsedParams}}
+              </div>
+            {{/each}}
+          </div>
+      {{/each}}
+    </div>
+  </template>
 }
